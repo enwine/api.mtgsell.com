@@ -1,0 +1,10 @@
+{
+  "name": "api.mtgsell.com",
+  "version": "0.1.0",
+  "dependencies": {
+    "mongoose": "*",
+    "express": "~4.13.3",
+    "method-override": "*",
+    "body-parser": "*"
+  }
+}
