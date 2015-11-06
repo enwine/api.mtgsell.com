@@ -10,8 +10,8 @@ app.use(db.connect);
 app.use(auth.authenticate);
 
 // Modules
-app.use('/products', require('./app/controllers/product')());
-app.use('/binders', require('./app/controllers/binder')());
+app.use('/products', require('./app/controllers/products')());
+app.use('/binders', require('./app/controllers/binders')());
 app.use(db.disconnect);
 
 app.listen(3000, function () {

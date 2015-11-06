@@ -1,5 +1,4 @@
 // For reference purposes only
-
 module.exports = function (name, color, collection, owner) {
 
     this.name = name || "New binder";
