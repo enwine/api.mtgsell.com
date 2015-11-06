@@ -2,9 +2,10 @@
   "name": "api.mtgsell.com",
   "version": "0.1.0",
   "dependencies": {
-    "mongoose": "*",
-    "express": "~4.13.3",
-    "method-override": "*",
-    "body-parser": "*"
+    "body-parser": "^1.14.1",
+    "express": "^4.13.3",
+    "method-override": "^2.3.5",
+    "mongodb": "^2.0.47",
+    "mongoskin": "^2.0.3"
   }
 }

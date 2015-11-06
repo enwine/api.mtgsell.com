@@ -1,20 +1,18 @@
 var express = require('express'),
-    app = express(),
     bodyParser = require('body-parser'),
-    methodOverride = require('method-override'),
-    mongoose = require('mongoose');
+    db = require('./app/utils/database'),
+    auth = require('./app/utils/auth'),
+    app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(methodOverride());
+app.use(db.connect);
+app.use(auth.authenticate);
 
-var router = express.Router();
-
-router.get('/', function(req, res) {
-    res.send('Hello World :)');
-});
-
-app.use(router);
+// Modules
+app.use('/products', require('./app/controllers/product')());
+app.use('/binders', require('./app/controllers/binder')());
+app.use(db.disconnect);
 
 app.listen(3000, function () {
     console.log('Node server running on http://localhost:3000');
